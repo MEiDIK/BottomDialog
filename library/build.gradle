@@ -23,17 +23,17 @@
  */
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
-        minSdkVersion 11
-        targetSdkVersion 23
-        versionCode 5
-        versionName "0.0.5"
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 6
+        versionName "1.0"
     }
     buildTypes {
         release {
@@ -44,14 +44,8 @@ android {
     lintOptions {
         abortOnError false
     }
-    publish {
-        userOrg = 'raphaelbussa'
-        groupId = 'rebus'
-        artifactId = 'bottom-dialog'
-        publishVersion = '0.0.5'
-    }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:26.1.0'
 }

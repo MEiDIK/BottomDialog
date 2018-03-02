@@ -26,6 +26,7 @@ package rebus.bottomdialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -124,7 +125,9 @@ public class BottomDialog {
             ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             container = new LinearLayout(getContext());
             container.setLayoutParams(params);
-            container.setBackgroundColor(Color.WHITE);
+            TypedValue typedValue = new TypedValue();
+            context.getTheme().resolveAttribute(android.R.attr.windowBackground, typedValue, true);
+            container.setBackgroundColor(typedValue.data);
             container.setOrientation(LinearLayout.VERTICAL);
             container.setPadding(0, padding, 0, padding);
             ScrollView scrollView = new ScrollView(getContext());
